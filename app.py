@@ -312,6 +312,10 @@ cleanup_thread = threading.Thread(target=cleanup_old_files, daemon=True)
 cleanup_thread.start()
 
 @app.route('/')
+def landing():
+    return render_template('landing.html')
+
+@app.route('/download')
 def index():
     return render_template('index.html')
 
